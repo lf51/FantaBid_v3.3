@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G80" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="LeagueEntity" representedClassName="LeagueEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="budget" optional="YES" attributeType="String"/>
+        <attribute name="distintaAttacco" optional="YES" attributeType="String"/>
+        <attribute name="distintaCentrocampo" optional="YES" attributeType="String"/>
+        <attribute name="distintaDifesa" optional="YES" attributeType="String"/>
+        <attribute name="distintaPortieri" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="nomeLega" optional="YES" attributeType="String"/>
+        <attribute name="numeroPartecipanti" optional="YES" attributeType="String"/>
+        <relationship name="giocatoriTrasferiti" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerEntity" inverseName="legaRiferimento" inverseEntity="PlayerEntity"/>
+        <relationship name="partecipantiLega" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TeamEntity" inverseName="legaRiferimento" inverseEntity="TeamEntity"/>
+    </entity>
+    <entity name="PlayerEntity" representedClassName="PlayerEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="costoCartellino" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="legaRiferimento" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LeagueEntity" inverseName="giocatoriTrasferiti" inverseEntity="LeagueEntity"/>
+        <relationship name="teamRiferimento" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TeamEntity" inverseName="giocatoriTesserati" inverseEntity="TeamEntity"/>
+    </entity>
+    <entity name="TeamEntity" representedClassName="TeamEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="fantaManager" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <relationship name="giocatoriTesserati" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerEntity" inverseName="teamRiferimento" inverseEntity="PlayerEntity"/>
+        <relationship name="legaRiferimento" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LeagueEntity" inverseName="partecipantiLega" inverseEntity="LeagueEntity"/>
+    </entity>
+    <configuration name="Configuration"/>
+    <elements>
+        <element name="LeagueEntity" positionX="-475.8063354492188" positionY="-476.6427001953125" width="128" height="179"/>
+        <element name="PlayerEntity" positionX="-555.2752075195312" positionY="-87.93545532226562" width="128" height="104"/>
+        <element name="TeamEntity" positionX="-410.02685546875" positionY="-250.3257751464844" width="128" height="104"/>
+    </elements>
+</model>
