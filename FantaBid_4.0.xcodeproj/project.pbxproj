@@ -43,6 +43,7 @@
 		4D9AF6BC26E22B5E00871463 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D9AF6BB26E22B5E00871463 /* LaunchScreen.storyboard */; };
 		4D9AF6BE26E3820B00871463 /* OrangeLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D9AF6BD26E3820B00871463 /* OrangeLaunchScreen.storyboard */; };
 		4D9AF6C326E4B6A300871463 /* SubHeaderBidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9AF6C226E4B6A300871463 /* SubHeaderBidView.swift */; };
+		4DB505B4273E8FA0004C8D5F /* ListaGiocatori_old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB505B3273E8FA0004C8D5F /* ListaGiocatori_old.swift */; };
 		4DC07CFA26DAA64700DF4C22 /* PulseHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC07CF926DAA64700DF4C22 /* PulseHomeView.swift */; };
 		4DC07CFC26DBD3F400DF4C22 /* HeaderNewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC07CFB26DBD3F400DF4C22 /* HeaderNewInfo.swift */; };
 		4DC3819526D8FF8000610CFE /* CaroselloInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3819426D8FF8000610CFE /* CaroselloInfo.swift */; };
@@ -94,6 +95,7 @@
 		4D9AF6BB26E22B5E00871463 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D9AF6BD26E3820B00871463 /* OrangeLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrangeLaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D9AF6C226E4B6A300871463 /* SubHeaderBidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeaderBidView.swift; sourceTree = "<group>"; };
+		4DB505B3273E8FA0004C8D5F /* ListaGiocatori_old.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaGiocatori_old.swift; sourceTree = "<group>"; };
 		4DC07CF926DAA64700DF4C22 /* PulseHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseHomeView.swift; sourceTree = "<group>"; };
 		4DC07CFB26DBD3F400DF4C22 /* HeaderNewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderNewInfo.swift; sourceTree = "<group>"; };
 		4DC3819426D8FF8000610CFE /* CaroselloInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaroselloInfo.swift; sourceTree = "<group>"; };
@@ -199,7 +201,7 @@
 				4DE92C042693510D009F6F15 /* BidView.swift */,
 				4D1F53B1268C769300EB88C5 /* InfoPlayer.swift */,
 				4D8C999926863BB4000E3F86 /* ListaRow.swift */,
-				4DE92C0926944E60009F6F15 /* ListaGiocatori.swift */,
+				4DB505B2273E8F81004C8D5F /* ListaGiocatori */,
 			);
 			path = "Tab Auction";
 			sourceTree = "<group>";
@@ -272,6 +274,15 @@
 				4D9AF6BD26E3820B00871463 /* OrangeLaunchScreen.storyboard */,
 			);
 			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		4DB505B2273E8F81004C8D5F /* ListaGiocatori */ = {
+			isa = PBXGroup;
+			children = (
+				4DE92C0926944E60009F6F15 /* ListaGiocatori.swift */,
+				4DB505B3273E8FA0004C8D5F /* ListaGiocatori_old.swift */,
+			);
+			path = ListaGiocatori;
 			sourceTree = "<group>";
 		};
 		4DF3C01D26BB0926006B645A /* CoreData */ = {
@@ -380,6 +391,7 @@
 				4D8C99A626863BF5000E3F86 /* RosaRow.swift in Sources */,
 				4D1F53A92689BC3E00EB88C5 /* LeagueData.swift in Sources */,
 				4D77EA7F26961D0000252464 /* HomeView.swift in Sources */,
+				4DB505B4273E8FA0004C8D5F /* ListaGiocatori_old.swift in Sources */,
 				4D459F8B269711E400EDDD78 /* HeaderSectionSetupLega.swift in Sources */,
 				4DC3819526D8FF8000610CFE /* CaroselloInfo.swift in Sources */,
 				4D77EA832696EB5300252464 /* CampoTextView.swift in Sources */,
@@ -521,9 +533,10 @@
 		4D6B35A82682547300818015 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-PlainOrange";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-14Border";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FantaBid_4.0/Preview Content\"";
 				DEVELOPMENT_TEAM = 2HR732K89Z;
 				ENABLE_PREVIEWS = YES;
@@ -533,6 +546,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "calogero-friscia.FantaBid-4-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -543,9 +557,10 @@
 		4D6B35A92682547300818015 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-PlainOrange";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-14Border";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FantaBid_4.0/Preview Content\"";
 				DEVELOPMENT_TEAM = 2HR732K89Z;
 				ENABLE_PREVIEWS = YES;
@@ -555,6 +570,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "calogero-friscia.FantaBid-4-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

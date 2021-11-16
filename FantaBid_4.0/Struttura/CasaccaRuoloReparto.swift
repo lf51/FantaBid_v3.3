@@ -87,7 +87,7 @@ switch squadra {
 
 case "Atalanta": strisciaA = Color.blue; strisciaB = Color.black
 case "Inter": strisciaA = Color.black; strisciaB = Color.blue
-case "Milan": strisciaA = Color.black; strisciaB = Color.red
+case "Milan": strisciaA = Color.red; strisciaB = Color.black
 case "Juventus": strisciaA = Color.white; strisciaB = Color.black
 case "Napoli": strisciaA = Color.blue; strisciaB = Color.blue
 case "Lazio": strisciaA = Color.white; strisciaB = Color.blue

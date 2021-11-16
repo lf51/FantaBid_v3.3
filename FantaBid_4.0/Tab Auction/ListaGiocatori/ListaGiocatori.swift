@@ -8,10 +8,13 @@
 
 import SwiftUI
 
+@available(iOS 15.0, *)
 struct ListaGiocatori: View {
 
     @EnvironmentObject var leagueData: LeagueData
-    @Environment(\.presentationMode) var presentationMode
+   // @Environment(\.presentationMode) var presentationMode
+    
+    @Environment(\.isPresented) var isPresented
 
     @State private var astaMod:Bool = false
     @State private var searchText: String = ""
@@ -71,7 +74,7 @@ struct ListaGiocatori: View {
                     
                     Section(header:Text(reparto.rawValue)) {
                         
-                        ForEach(leagueData.currentPlayersData.listaFiltrata(reparto: reparto.rawValue, showFavoriteOnly: showFavoriteOnly, searchText: searchText, isPresented: presentationMode.wrappedValue.isPresented, startFrom: leagueData.starterPlayer ?? nil, repartoAllActives: repartoAllActives)){ player in
+                        ForEach(leagueData.currentPlayersData.listaFiltrata(reparto: reparto.rawValue, showFavoriteOnly: showFavoriteOnly, searchText: searchText, isPresented: isPresented, startFrom: leagueData.starterPlayer ?? nil, repartoAllActives: repartoAllActives)){ player in
                             
                             if  player.svincolato && astaMod {
                                 

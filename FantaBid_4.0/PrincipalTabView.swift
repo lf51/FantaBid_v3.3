@@ -21,11 +21,23 @@ struct PrincipalTabView: View {
                         Text("Setup")
                     }.tag(0)
  
-                ListaGiocatori()
-                     .tabItem {
-                         Image(systemName: "rectangle.stack.person.crop")
-                         Text("Listone")
-                     }.tag(1)
+                if #available(iOS 15.0, *) {
+                    ListaGiocatori()
+                        .tabItem {
+                            Image(systemName: "rectangle.stack.person.crop")
+                            Text("Listone")
+                        }.tag(1)
+                    
+                } else {
+                    
+                    ListaGiocatori_old()
+                        .tabItem {
+                            Image(systemName: "rectangle.stack.person.crop")
+                            Text("ListoneOld")
+                        }.tag(1)
+                    
+                    // Fallback on earlier versions
+                }
                     
                 ListaTeams()
                        .tabItem {

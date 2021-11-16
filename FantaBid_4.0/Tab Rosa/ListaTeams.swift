@@ -7,10 +7,12 @@
 
 import SwiftUI
 
+//@available(iOS 15.0, *)
 struct ListaTeams: View {
 
     @EnvironmentObject var leagueData: LeagueData
-    @Environment(\.presentationMode) var presentationMode
+  //  @Environment(\.presentationMode) var presentationMode
+  //  @Environment(\.isPresented) var isPresented
 
     var body: some View {
     

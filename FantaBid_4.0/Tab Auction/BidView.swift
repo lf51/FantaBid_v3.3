@@ -63,12 +63,30 @@ struct BidView: View {
     count = 3
         
     }
+    
+    func bidding(bid:Int) {
+        
+        guard !isSelling && !isSelled else {return}
+  
+        let valoreBid = Int(self.bid) ?? 0
+        
+        var currentBid = valoreBid
+        currentBid += bid
+        
+        if currentBid > 0 {self.bid = String(currentBid)} else {self.bid = ""}
+    
+    }
+    
+    func hideKeyboard(){
+        
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
 
     var body: some View {
   
             Form {
               
-                Section(header: Text("Player in Auction")){
+                Section(header: Text("Player in Auction"),footer:Text("fonte dati Fantacalcio.it").italic()){
                     
                     HeaderInfoBid(leagueData: leagueData, playerCorrente: playerCorrente)
    
@@ -83,7 +101,8 @@ struct BidView: View {
                     if !isSelling {
                         
                         HStack {
-                            TextField("0", text: $bid).keyboardType(.numberPad)
+                            TextField("0", text: $bid)
+                                .keyboardType(.numberPad)
                                 .frame(maxWidth: .infinity)
                                 .frame(height: 125, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .font(.system(size: 100))
@@ -129,7 +148,6 @@ struct BidView: View {
                             
                             VStack(spacing: 20) {
 
-                                
                                 Button(action: {resetAuction()}, label: {
                                     Text("UNDO").bold().font(.system(.subheadline, design: .monospaced)).foregroundColor(.red)
                                 }).frame(width: 50, height: 35, alignment: .center).background(Color.init(red: 205, green: 205, blue: 205)).cornerRadius(5.0).shadow(radius: 1.0)
@@ -153,6 +171,67 @@ struct BidView: View {
                         
                     }
                         
+                        HStack {
+ 
+                            Group {
+                                
+                                HStack {
+                 
+                                    Text("-1 / C").bold().foregroundColor(.red).onTapGesture {
+                                            bidding(bid: -1)
+                                       hideKeyboard()
+                                        }.onLongPressGesture {
+                                            self.bid = ""
+                                            hideKeyboard()
+                                        }.padding(.horizontal)
+                                }
+                                
+                                Spacer()
+                                Divider()
+                                Spacer()
+                                
+                                HStack {
+          
+                                    Text("+ 10").font(.title3).foregroundColor(Color(#colorLiteral(red: 0, green: 0.5603182912, blue: 0, alpha: 1))).bold().onTapGesture {
+                                            bidding(bid: 10)
+                                        hideKeyboard()
+                                        }.padding(.horizontal)
+                       
+                                }
+                                
+                            }
+                  
+                            Group {
+                                
+                                Spacer()
+                                Divider()
+                                Spacer()
+                                
+                                HStack {
+                                    
+                                    Text("+ 5").font(.headline).foregroundColor(Color(#colorLiteral(red: 0, green: 0.5628422499, blue: 0.3188166618, alpha: 1))).bold().onTapGesture {
+                                        bidding(bid: 5)
+                                        hideKeyboard()
+                                    }.padding(.horizontal)
+      
+                                }
+                                
+                                Spacer()
+                                Divider()
+                                Spacer()
+                                
+                                HStack {
+
+                                    Text("+ 1").font(.none).foregroundColor(.green).bold().onTapGesture {
+                                        bidding(bid: 1)
+                                        hideKeyboard()
+                                    }.padding(.horizontal)
+                                    
+                            }
+                            }
+
+                        }//.disabled(isSelling || isSelled)
+                 
                     }
                 }
       
@@ -214,7 +293,6 @@ struct BidView: View {
             }.navigationTitle("\(playerCorrente.nome)").navigationBarTitleDisplayMode(.inline)
                     
             }
-            
     }
           
             

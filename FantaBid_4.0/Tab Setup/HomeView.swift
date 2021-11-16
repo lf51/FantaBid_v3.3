@@ -106,7 +106,8 @@ struct HomeView: View {
             .navigationTitle(Text(federationLeaguesData.elencoLeghe.isEmpty ? "Add New Leagues" : "All Leagues"))
             
             
-        }.navigationViewStyle(StackNavigationViewStyle())
+        }//.navigationViewStyle(StackNavigationViewStyle())
+        //.navigationViewStyle(.stack)
 }
 }
 /*

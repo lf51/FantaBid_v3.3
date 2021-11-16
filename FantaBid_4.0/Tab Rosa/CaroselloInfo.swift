@@ -192,7 +192,10 @@ struct CaroselloInfo: View {
                 
             }
             
-            
+            HStack {
+                Text("fonte dati Fantacalcio.it").font(.system(size: 14)).foregroundColor(.secondary).italic()
+                Spacer()
+            }
             
             Spacer()
             

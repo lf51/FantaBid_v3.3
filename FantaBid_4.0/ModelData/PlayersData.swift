@@ -23,9 +23,7 @@ final class PlayersData: ObservableObject, Identifiable {
     init (legaProprietaria: LeagueEntity) {
         
         self.leagueEntityProprietaria = legaProprietaria
-        print("\(cancellables.count)")
         getListaGiocatori()
-        print("\(cancellables.count)")
         
     }
  
@@ -70,7 +68,7 @@ final class PlayersData: ObservableObject, Identifiable {
     
     func getListaGiocatori() {
         
-        guard let url = URL(string: "https://lavocedelbruco.com/Fantabid/Stat_2021-22PROVVISORIO.json") else { return }
+        guard let url = URL(string: "https://fantabid.it/statistiche/Stat_2021-22.json") else { return }
       //  url.removeAllCachedResourceValues()
         
         URLSession.shared.dataTaskPublisher(for: url)
