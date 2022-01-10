@@ -31,7 +31,11 @@ struct RosaView: View {
                     
             ForEach(teamData.distinta[reparto]!, id:\.self) { player in
                 
-                NavigationLink(destination: CaroselloInfo(playerCorrente: player, teamData: teamData),label: {RosaRow(giocatore: player)})
+             //   NavigationLink(destination: CaroselloInfo(playerCorrente: player, teamData: teamData),label: {
+                    
+                    RosaRow(giocatore: player)
+                    
+            //    })
                         
             }
                 }

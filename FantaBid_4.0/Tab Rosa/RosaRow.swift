@@ -29,8 +29,8 @@ struct RosaRow: View {
                   Text("\(giocatore.costoCartellino)").bold().multilineTextAlignment(.trailing).foregroundColor(Color.orange)
                   Image(systemName: "dollarsign.circle").foregroundColor(.secondary).padding(.leading,-5)
 
-                 Text("-")
-                 Text("Info").bold().font(.system(.subheadline, design: .monospaced)).textCase(.uppercase).padding(.trailing,10).foregroundColor(.red)
+             /*    Text("-")
+                 Text("Info").bold().font(.system(.subheadline, design: .monospaced)).textCase(.uppercase).padding(.trailing,10).foregroundColor(.red) */
                     
                 }
           
